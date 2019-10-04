@@ -1,0 +1,13 @@
+[package]
+name = "length"
+version = "0.1.0"
+authors = ["Ringo Leese <webmaster@ringoleese.de>"]
+edition = "2018"
+description = "A library to handle length/distances easyly. It can parse a string with several units (m, km, mi, ft, ...) into the Length-struct and converting into other units."
+readme = "README.md"
+license = "CC0-1.0"
+keywords = ["length", "distance", "converter"]
+
+[dependencies]
+lazy_static = "1"
+regex = "1"
