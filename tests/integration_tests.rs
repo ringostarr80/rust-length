@@ -17,6 +17,13 @@ fn test_new_value_unit() {
 }
 
 #[test]
+fn test_new_value_unit_with_simplified_unit() {
+    let distance = Length::new_value_unit(2.5, Kilometer);
+    assert_eq!(distance.unit, Unit::Metric(Kilometer));
+    assert_eq!(distance.value, 2.5);
+}
+
+#[test]
 fn test_default() {
     let distance = Length::default();
     assert_eq!(distance.unit, Unit::Metric(Meter));
@@ -239,6 +246,15 @@ fn test_from_km_to_x() {
     let km_to_km = one_km.to(Unit::Metric(Kilometer));
     assert_eq!(km_to_km.unit, Unit::Metric(Kilometer));
     assert_eq!(km_to_km.value, 1.0);
+}
+
+#[test]
+fn test_from_km_to_x_by_ref() {
+    let mut one_km = Length::new_value_unit(1, Unit::Metric(Kilometer));
+
+    one_km.to_by_ref(Unit::Metric(Millimeter));
+    assert_eq!(one_km.unit, Unit::Metric(Millimeter));
+    assert_eq!(one_km.value, 1_000_000.0);
 }
 
 #[test]
@@ -495,4 +511,95 @@ fn test_get_original_string() {
 
     let ly_test = Length::new_string("2.3 ly").unwrap();
     assert_eq!(ly_test.get_original_string(), "2.3 ly");
+}
+
+#[test]
+fn test_add() {
+    let five_kilometer = Length::new_string("5km").unwrap();
+    let twohundred_meter = Length::new_string("200m").unwrap();
+    let five_dot_two_kilometer = five_kilometer.add(twohundred_meter);
+
+    assert_eq!(5.2, five_dot_two_kilometer.value);
+    assert_eq!(Unit::Metric(Kilometer), five_dot_two_kilometer.unit);
+}
+
+#[test]
+fn test_add_by_ref() {
+    let mut five_kilometer = Length::new_string("5km").unwrap();
+    let twohundred_meter = Length::new_string("200m").unwrap();
+    five_kilometer.add_by_ref(twohundred_meter);
+
+    assert_eq!(5.2, five_kilometer.value);
+    assert_eq!(Unit::Metric(Kilometer), five_kilometer.unit);
+}
+
+#[test]
+fn test_subtract() {
+    let five_kilometer = Length::new_string("5km").unwrap();
+    let twohundred_meter = Length::new_string("200m").unwrap();
+    let four_dot_eight_kilometer = five_kilometer.subtract(twohundred_meter);
+
+    assert_eq!(4.8, four_dot_eight_kilometer.value);
+    assert_eq!(Unit::Metric(Kilometer), four_dot_eight_kilometer.unit);
+}
+
+#[test]
+fn test_subtract_by_ref() {
+    let mut five_kilometer = Length::new_string("5km").unwrap();
+    let twohundred_meter = Length::new_string("200m").unwrap();
+    five_kilometer.subtract_by_ref(twohundred_meter);
+
+    assert_eq!(4.8, five_kilometer.value);
+    assert_eq!(Unit::Metric(Kilometer), five_kilometer.unit);
+}
+
+#[test]
+fn test_multiply_by() {
+    let five_kilometer = Length::new_string("5km").unwrap();
+    let fifty_kilometer = five_kilometer.multiply_by(10);
+
+    assert_eq!(50.0, fifty_kilometer.value);
+    assert_eq!(Unit::Metric(Kilometer), fifty_kilometer.unit);
+}
+
+#[test]
+fn test_multiply_by_ref() {
+    let mut five_kilometer = Length::new_string("5km").unwrap();
+    five_kilometer.multiply_by_ref(10);
+
+    assert_eq!(50.0, five_kilometer.value);
+    assert_eq!(Unit::Metric(Kilometer), five_kilometer.unit);
+}
+
+#[test]
+fn test_divide_by() {
+    let five_kilometer = Length::new_string("5km").unwrap();
+    let one_kilometer = five_kilometer.divide_by(5);
+
+    assert_eq!(1.0, one_kilometer.value);
+    assert_eq!(Unit::Metric(Kilometer), one_kilometer.unit);
+}
+
+#[test]
+fn test_divide_by_ref() {
+    let mut five_kilometer = Length::new_string("5km").unwrap();
+    five_kilometer.divide_by_ref(5);
+
+    assert_eq!(1.0, five_kilometer.value);
+    assert_eq!(Unit::Metric(Kilometer), five_kilometer.unit);
+}
+
+#[test]
+fn test_normalize() {
+    let fivethousand_meter = Length::new_string("5000m").unwrap();
+    let fivethousand_meter_normalized = fivethousand_meter.normalize();
+
+    assert_eq!(5.0, fivethousand_meter_normalized.value);
+    assert_eq!(Unit::Metric(Kilometer), fivethousand_meter_normalized.unit);
+
+    let five_meter_as_km = Length::new_string("0.005km").unwrap();
+    let five_meter_as_km_normalized = five_meter_as_km.normalize();
+
+    assert_eq!(5.0, five_meter_as_km_normalized.value);
+    assert_eq!(Unit::Metric(Meter), five_meter_as_km_normalized.unit);
 }
