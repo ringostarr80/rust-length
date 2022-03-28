@@ -11,5 +11,5 @@ license = "CC0-1.0"
 keywords = ["length", "distance", "converter"]
 
 [dependencies]
-lazy_static = "1"
-regex = "1"
+lazy_static = "1.4"
+regex = "1.5"

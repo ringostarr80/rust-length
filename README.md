@@ -1,3 +1,8 @@
+[![License: CC0](https://img.shields.io/github/license/ringostarr80/rust-length.svg)](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+[![Crates.io](https://img.shields.io/crates/v/length.svg)](https://crates.io/crates/length)
+[![Documentation](https://docs.rs/color_processing/badge.svg)](https://docs.rs/length/)
+![Rust](https://github.com/ringostarr80/rust-length/workflows/Rust/badge.svg)
+
 # Purpose
 
 This rust library is intended to do some processing of length values.  
