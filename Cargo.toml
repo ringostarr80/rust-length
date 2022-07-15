@@ -1,8 +1,8 @@
 [package]
 name = "length"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Ringo Leese <webmaster@ringoleese.de>"]
-edition = "2018"
+edition = "2021"
 description = "A library to handle length/distances easyly. It can parse a string with several units (m, km, mi, ft, ...) into the Length-struct and converting into other units."
 repository = "https://github.com/ringostarr80/rust-length"
 homepage = "https://github.com/ringostarr80/rust-length"
@@ -12,4 +12,4 @@ keywords = ["length", "distance", "converter"]
 
 [dependencies]
 lazy_static = "1.4"
-regex = "1.5"
+regex = "1.6"

@@ -1,12 +1,11 @@
 #[macro_use]
 extern crate lazy_static;
-extern crate regex;
 
 use std::f64::consts::PI;
 use std::hash::{Hash, Hasher};
 use std::str::FromStr;
 
-use self::regex::Regex;
+use regex::Regex;
 
 use AstronomicUnit::*;
 use ImperialUnit::*;
@@ -285,9 +284,9 @@ impl Length {
     ///
     /// assert_eq!(5000.0, five_kilometer.value);
     /// assert_eq!(Unit::Metric(Meter), five_kilometer.unit);
-    /// 
+    ///
     /// five_kilometer.to_by_ref(Kilometer);
-    /// 
+    ///
     /// assert_eq!(5.0, five_kilometer.value);
     /// assert_eq!(Unit::Metric(Kilometer), five_kilometer.unit);
     /// ```
