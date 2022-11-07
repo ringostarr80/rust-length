@@ -14,7 +14,7 @@ To use `length`, first add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-length = "0.1"
+length = "0.2"
 ```
 
 Next, add this to your crate:
@@ -27,12 +27,12 @@ use length::{Length, Unit, MetricUnit::*};
 fn main() {
     let five_meter = Length::new_string("5m").unwrap();
     assert_eq!("5m", five_meter.to_original_string());
-	assert_eq!(5.0, five_meter.value);
-	assert_eq!(Unit::Metric(Meter), five_meter.unit);
+    assert_eq!(5.0, five_meter.value);
+    assert_eq!(Unit::Metric(Meter), five_meter.unit);
 
-	let fivehundred_centimeter = five_meter.to(Unit::Metric(Centimeter));
-	assert_eq!(500.0, fivehundred_centimer.value);
-	assert_eq!(Unit::Metric(Centimeter), fivehundred_centimer.unit);
+    let fivehundred_centimeter = five_meter.to(Unit::Metric(Centimeter));
+    assert_eq!(500.0, fivehundred_centimer.value);
+    assert_eq!(Unit::Metric(Centimeter), fivehundred_centimer.unit);
 
     // ...
 }
