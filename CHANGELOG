@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.2] - 2022-11-28
+### Added
+- new SI-units: ronna, quetta, ronto, quecto from https://www.npl.co.uk/si-prefix
+
 ## [0.2.1] - 2022-07-15
 ### Changed
 - updated dependencies and rust edition to 2021

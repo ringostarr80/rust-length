@@ -32,6 +32,12 @@ fn test_default() {
 
 #[test]
 fn test_to_string_for_metrics() {
+    let qm = Length::new_value_unit(10, Unit::Metric(Quectometer));
+    assert_eq!(qm.to_string(), "10 qm");
+
+    let rm = Length::new_value_unit(10, Unit::Metric(Rontometer));
+    assert_eq!(rm.to_string(), "10 rm");
+
     let ym = Length::new_value_unit(10, Unit::Metric(Yoctometer));
     assert_eq!(ym.to_string(), "10 ym");
 
@@ -94,6 +100,12 @@ fn test_to_string_for_metrics() {
 
     let yottam = Length::new_value_unit(0.5, Unit::Metric(Yottameter));
     assert_eq!(yottam.to_string(), "0.5 Ym");
+
+    let ronnam = Length::new_value_unit(0.5, Unit::Metric(Ronnameter));
+    assert_eq!(ronnam.to_string(), "0.5 Rm");
+
+    let quettam = Length::new_value_unit(0.5, Unit::Metric(Quettameter));
+    assert_eq!(quettam.to_string(), "0.5 Qm");
 }
 
 #[test]
