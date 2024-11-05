@@ -1,6 +1,6 @@
 [package]
 name = "length"
-version = "0.2.2"
+version = "0.2.3"
 authors = ["Ringo Leese <webmaster@ringoleese.de>"]
 edition = "2021"
 description = "A library to handle length/distances easyly. It can parse a string with several units (m, km, mi, ft, ...) into the Length-struct and converting into other units."
