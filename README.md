@@ -2,6 +2,7 @@
 [![Crates.io](https://img.shields.io/crates/v/length.svg)](https://crates.io/crates/length)
 [![Documentation](https://docs.rs/color_processing/badge.svg)](https://docs.rs/length/)
 ![Rust](https://github.com/ringostarr80/rust-length/workflows/Rust/badge.svg)
+[![codecov](https://codecov.io/gh/ringostarr80/rust-length/graph/badge.svg?token=SB4B08D01O)](https://codecov.io/gh/ringostarr80/rust-length)
 
 # Purpose
 
