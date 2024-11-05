@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.3] - 2024-11-05
+### Added
+- badge for CodeCoverage to README.md
+
+### Changed
+- renamed CHANGELOG to CHANGELOG.md
+- updated cargo dependencies
+
 ## [0.2.2] - 2022-11-28
 ### Added
 - new SI-units: ronna, quetta, ronto, quecto from https://www.npl.co.uk/si-prefix
@@ -26,3 +34,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [0.1.0] - 2019-10-04
 ### Added
 - initial Release
+
+[unreleased]: https://github.com/ringostarr80/rust-length/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/ringostarr80/rust-length/compare/v0.2.1...v0.2.2
+[0.2.1]: https://github.com/ringostarr80/rust-length/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/ringostarr80/rust-length/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/ringostarr80/rust-length/releases/tag/v0.1.0
