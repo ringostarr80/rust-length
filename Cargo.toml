@@ -12,4 +12,4 @@ keywords = ["length", "distance", "converter"]
 
 [dependencies]
 lazy_static = "1.5"
-regex = "1.11"
+regex = "1.12"
